@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+
+	using namespace std;
+
+	class Movie
+	{
+	private :
+		string rating;
+	public:
+		string title;
+		string director;
+
+		Movie(string a_title, string a_director, string a_rating)
+		{
+			title = a_title;
+			director = a_director;
+			setRating(a_rating);
+		}
+
+		void setRating(string a_rating)
+		{
+			if (a_rating == "G" || a_rating == "PG" || a_rating == "PG-13" || a_rating == "R" || a_rating == "NR")
+				rating = a_rating;
+			else
+			{
+				rating = "NR";
+			}
+		}
+
+		string getRating()
+		{
+			return rating;
+		}
+	};
+
+	int main() 
+	{
+		Movie avengers("infinite war", "Joss whedon", "PG-13");
+
+		avengers.setRating("Dog");
+
+		cout << avengers.getRating();
+
+		return 0;
+
+	}
